@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+:root {
+  --cyan: hsl(171, 66%, 44%);
+  --lightCyan: rgb(93, 204, 187);
+  --blue: hsl(233, 100%, 69%);
+  --lightBlue: rgb(136, 150, 255);
+  --darkGray: hsl(210, 10%, 33%);
+  --gray: hsl(201, 11%, 66%);
+  --white: hsl(0, 100%, 100%);
+  --primary: var(--cyan);
+  --secondary: var(--blue);
+
+  --fontSize: 18px;
+  --font: 'Bai Jamjuree', sans-serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--fontSize);
+}
+
+body {
+  font-family: var(--font);
+  color: var(--darkGray);
+  text-align: center;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* =========================== */
+/* HELPER CLASSES */
+/* =========================== */
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+button,
+.btn {
+  border-radius: 25px;
+  color: var(--white);
+  background: var(--cyan);
+  border: none;
+  padding: 1rem 4.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+button:hover,
+.btn:hover {
+  background: var(--lightCyan);
+}
+
+.btn--secondary {
+  background: var(--blue);
+}
+
+.btn--secondary:hover {
+  background: var(--lightBlue);
+}
+
+@media (min-width: 768px) {
+  button,
+  .btn {
+    padding: 1rem 2rem;
+  }
+}
+
+/* =========================== */
+/* HERO */
+/* =========================== */
+header {
+  background-image: url('./images/bg-header-mobile.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding-top: 6.75rem;
+}
+
+.header__logo {
+  margin-bottom: 4rem;
+}
+
+.header__title {
+  margin-bottom: 1rem;
+}
+
+.header__p {
+  margin-bottom: 3rem;
+  color: var(--gray);
+}
+
+@media (min-width: 768px) {
+  header {
+    background-image: url('./images/bg-header-desktop.png');
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header__logo,
+  .header__title,
+  .header__p {
+    grid-column: 1/-1;
+  }
+
+  .hero button:nth-of-type(1n) {
+    justify-self: end;
+    margin-right: 0.5rem;
+  }
+  .hero button:nth-of-type(2n) {
+    justify-self: start;
+    margin-left: 0.5rem;
+  }
+}
+
+/* =========================== */
+/* FOOTER */
+/* =========================== */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--blue);
+}
